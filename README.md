@@ -16,6 +16,25 @@ Clocking out
 cws-clocking-cli -out
 ```
 
+## Installation
+
+### macOS
+
+If you use [Homebrew](https://brew.sh):
+
+```
+brew tap yano3/tap
+brew install cws-clocking-cli
+```
+
+### Other platforms
+
+Download binary from [releases page](https://github.com/yano3/cws-clocking-cli/releases) or use `go get` command.
+
+```console
+$ go get -u github.com/yano3/cws-clocking-cli
+```
+
 ## Configuration
 
 Set environment variables bellow.
