@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"flag"
 	"fmt"
 	"io"
@@ -58,11 +57,15 @@ func clockIn(clockingOut bool) error {
 	}
 	defer res.Body.Close()
 
+	if 200 != res.StatusCode {
+		return fmt.Errorf(res.Status)
+	}
+
 	doc, _ := goquery.NewDocumentFromReader(res.Body)
 
 	if mes := doc.Find("table > tbody > tr > td > strong").Text(); mes != "\u00a0" {
 		errMes, _ := decodeShiftJIS(mes)
-		return errors.New(errMes)
+		return fmt.Errorf(errMes)
 	}
 
 	clockingTime, err := decodeShiftJIS(doc.Find("table > tbody > tr > td > font > u").Text())
