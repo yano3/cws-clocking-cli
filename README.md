@@ -1,5 +1,7 @@
 # cws-clocking-cli
 
+[![CI](https://github.com/yano3/cws-clocking-cli/workflows/CI/badge.svg)](https://github.com/yano3/cws-clocking-cli/actions)
+
 Clocking in/out cli for COMPANY Web Service.
 
 ## Usage
