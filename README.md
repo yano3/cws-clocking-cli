@@ -31,10 +31,10 @@ brew install cws-clocking-cli
 
 ### Other platforms
 
-Download binary from [releases page](https://github.com/yano3/cws-clocking-cli/releases) or use `go get` command.
+Download binary from [releases page](https://github.com/yano3/cws-clocking-cli/releases) or use `go install` command.
 
 ```console
-$ go get -u github.com/yano3/cws-clocking-cli
+$ go install github.com/yano3/cws-clocking-cli@latest
 ```
 
 ## Configuration
