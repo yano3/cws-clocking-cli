@@ -1,6 +1,6 @@
 module github.com/yano3/cws-clocking-cli
 
-go 1.17
+go 1.18
 
 require (
 	github.com/PuerkitoBio/goquery v1.6.0
