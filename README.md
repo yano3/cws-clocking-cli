@@ -24,8 +24,8 @@ cws-clocking-cli -out
 
 If you use [Homebrew](https://brew.sh):
 
-```
-brew tap yano3/tap
+```console
+brew tap yano3/cws-clocking-cli https://github.com/yano3/cws-clocking-cli
 brew install cws-clocking-cli
 ```
 
