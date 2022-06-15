@@ -1,0 +1,43 @@
+builds:
+  -
+    id: macos
+    goos: [darwin]
+    goarch:
+      - amd64
+      - arm64
+  -
+    id: linux
+    goos: [linux]
+    goarch:
+      - amd64
+  -
+    id: windows
+    goos: [windows]
+    goarch:
+      - amd64
+archives:
+  -
+    format: zip
+    name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}'
+    files:
+      - none*
+checksum:
+  name_template: '{{ .ProjectName }}_checksums.txt'
+changelog:
+  filters:
+    exclude:
+      - Merge pull request
+      - Merge branch
+brews:
+  -
+    name: cws-clocking-cli
+    tap:
+      owner: yano3
+      name: cws-clocking-cli
+    folder: HomebrewFormula
+    commit_author:
+      name: Teppei Yano
+      email: buckelwal@gmail.com
+    homepage: https://github.com/yano3/cws-clocking-cli
+    description: Clocking in/out cli for COMPANY Web Service.
+    license: MIT
