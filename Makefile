@@ -1,12 +1,8 @@
-deps:
-	go get -d -t ./...
-
-test: deps
+test:
 	go test -v
 
-build: deps
-	goxz -os=darwin,linux,windows -arch=amd64 -d=dist -z
+build:
+	CGO_ENABLED=0 go build
 
 lint:
 	go vet
-	golint -set_exit_status
