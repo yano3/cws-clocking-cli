@@ -12,12 +12,14 @@ func TestRun_versionFlag(t *testing.T) {
 	cli := &CLI{outStream: outStream, errStream: errStream}
 	args := strings.Split("./cws-clocking-cli -version", " ")
 
+	version = "1.2.3"
+
 	status := cli.Run(args)
 	if status != ExitCodeOK {
 		t.Errorf("expected %d to eq %d", status, ExitCodeOK)
 	}
 
-	expected := fmt.Sprintf("cws-clocking-cli version %s", Version)
+	expected := fmt.Sprintf("cws-clocking-cli version %s", version)
 	if !strings.Contains(errStream.String(), expected) {
 		t.Errorf("expected %q to eq %q", errStream.String(), expected)
 	}
