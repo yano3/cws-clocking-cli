@@ -1,20 +1,27 @@
 builds:
   -
+  - <<: &build_defaults
+      ldflags: -s -w -X main.version={{.Version}}
+      env:
+        - CGO_ENABLED=0
     id: macos
     goos: [darwin]
     goarch:
       - amd64
       - arm64
   -
+    <<: *build_defaults
     id: linux
     goos: [linux]
     goarch:
       - amd64
   -
+    <<: *build_defaults
     id: windows
     goos: [windows]
     goarch:
       - amd64
+
 archives:
   -
     format: zip
