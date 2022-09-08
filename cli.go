@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
@@ -57,7 +56,7 @@ func clockIn(clockingOut bool) error {
 	}
 	defer res.Body.Close()
 
-	if 200 != res.StatusCode {
+	if res.StatusCode != 200 {
 		return fmt.Errorf(res.Status)
 	}
 
@@ -82,7 +81,7 @@ func clockIn(clockingOut bool) error {
 }
 
 func decodeShiftJIS(s string) (string, error) {
-	r, err := ioutil.ReadAll(transform.NewReader(strings.NewReader(s), japanese.ShiftJIS.NewDecoder()))
+	r, err := io.ReadAll(transform.NewReader(strings.NewReader(s), japanese.ShiftJIS.NewDecoder()))
 	if err != nil {
 		return "", err
 	}
