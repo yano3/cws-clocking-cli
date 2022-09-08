@@ -57,7 +57,7 @@ func clockIn(clockingOut bool) error {
 	}
 	defer res.Body.Close()
 
-	if 200 != res.StatusCode {
+	if res.StatusCode != 200 {
 		return fmt.Errorf(res.Status)
 	}
 
