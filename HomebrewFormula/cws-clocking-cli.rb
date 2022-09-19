@@ -5,21 +5,21 @@
 class CwsClockingCli < Formula
   desc "Clocking in/out cli for COMPANY Web Service."
   homepage "https://github.com/yano3/cws-clocking-cli"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/yano3/cws-clocking-cli/releases/download/v0.2.1/cws-clocking-cli_darwin_arm64.zip"
-      sha256 "1806a1a6f348e27fbeff9592b9a4ecc1be7fd062d78c8d3e3f0520b24d499f78"
+    if Hardware::CPU.intel?
+      url "https://github.com/yano3/cws-clocking-cli/releases/download/v0.2.2/cws-clocking-cli_darwin_amd64.zip"
+      sha256 "96049d96d0709bf9cd3118b8abea47d8f68be264a169b47faf029c261d83d197"
 
       def install
         bin.install "cws-clocking-cli"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/yano3/cws-clocking-cli/releases/download/v0.2.1/cws-clocking-cli_darwin_amd64.zip"
-      sha256 "e9b4983f5de5cfd131ba1f64c101973d00fde6e090c424802b462e9ae7917ff6"
+    if Hardware::CPU.arm?
+      url "https://github.com/yano3/cws-clocking-cli/releases/download/v0.2.2/cws-clocking-cli_darwin_arm64.zip"
+      sha256 "727609ab5429b8e702dee7ef6a8f8ee86ae01b44e00eaee3530e1d827b797055"
 
       def install
         bin.install "cws-clocking-cli"
@@ -29,8 +29,8 @@ class CwsClockingCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/yano3/cws-clocking-cli/releases/download/v0.2.1/cws-clocking-cli_linux_amd64.zip"
-      sha256 "e6bf490e159b2dc5b6fba0225d1c493fd3352adcb3cdd1469d5d9884cfb2adfd"
+      url "https://github.com/yano3/cws-clocking-cli/releases/download/v0.2.2/cws-clocking-cli_linux_amd64.zip"
+      sha256 "21686aa1c2ba845fc77553abd0e14f27860cad1c9042fa64996b25e86984a245"
 
       def install
         bin.install "cws-clocking-cli"
